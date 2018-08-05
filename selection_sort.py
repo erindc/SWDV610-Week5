@@ -1,4 +1,5 @@
 #Erin Cox
+import timeit
 
 def selectionSort(inputList):
     for swapNum in range(len(inputList)-1, 0, -1):
@@ -12,3 +13,6 @@ def selectionSort(inputList):
 inputList = [1,10,9,2,5,3,4,7,8,6]
 sortedList = selectionSort(inputList)
 print(sortedList)
+
+t = timeit.Timer("selectionSort(inputList)", "from __main__ import selectionSort, inputList")
+print("time taken: ", t.timeit(number=1))

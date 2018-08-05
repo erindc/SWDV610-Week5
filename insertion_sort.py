@@ -1,4 +1,5 @@
 #Erin Cox
+import timeit
 
 def insertionSort(inputList):
     for index in range(1, len(inputList)):
@@ -16,3 +17,6 @@ def insertionSort(inputList):
 inputList = [1,10,9,2,5,3,4,7,8,6]
 sortedList = insertionSort(inputList)
 print(sortedList)
+
+t = timeit.Timer("insertionSort(inputList)", "from __main__ import insertionSort, inputList")
+print("time taken: ", t.timeit(number=1))
